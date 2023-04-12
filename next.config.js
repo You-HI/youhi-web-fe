@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const GITHUB_PAGE_URL = 'https://you-hi.github.io/youhi-web-fe';
 
-module.exports = nextConfig
+const nextConfig = {
+  assetPrefix: process.env.NODE_ENV === 'production' ? GITHUB_PAGE_URL : '',
+};
+
+module.exports = nextConfig;
