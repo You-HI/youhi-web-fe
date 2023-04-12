@@ -7,7 +7,10 @@ const nextConfig = {
   images: isProd ? {
     loader: 'default',
     loaderFile: './imageLoader.js',
-  } : undefined
+  } : {
+    loader: 'default',
+    loaderFile: '',
+  }
 };
 
 module.exports = nextConfig;
