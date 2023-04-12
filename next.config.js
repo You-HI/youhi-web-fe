@@ -5,7 +5,7 @@ const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
   assetPrefix: isProd ? GITHUB_PAGE_URL : '',
   images: isProd ? {
-    loader: 'custom',
+    loader: 'default',
     loaderFile: './imageLoader.js',
   } : undefined
 };
