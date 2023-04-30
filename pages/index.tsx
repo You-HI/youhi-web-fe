@@ -1,9 +1,11 @@
+import classNames from 'classnames/bind';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import Image from 'next/image';
 
-import styles from '@/styles/Home.module.css';
+import styles from '@/styles/Home.module.scss';
 
+const cx = classNames.bind(styles);
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
@@ -15,11 +17,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
+      <main className={cx('main')}>
+        <div className={cx('description')}>
           <p>
             Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.tsx</code>
+            <code className={cx('code')}>src/pages/index.tsx</code>
           </p>
           <div>
             <a
@@ -31,7 +33,7 @@ export default function Home() {
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
-                className={styles.vercelLogo}
+                className={cx('vercelLogo')}
                 width={100}
                 height={24}
                 priority
@@ -40,9 +42,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.center}>
+        <div className={cx('center')}>
           <Image
-            className={styles.logo}
+            className={cx('logo')}
             src="/next.svg"
             alt="Next.js Logo"
             width={180}
@@ -51,10 +53,10 @@ export default function Home() {
           />
         </div>
 
-        <div className={styles.grid}>
+        <div className={cx('grid')}>
           <a
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
+            className={cx('card')}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -68,7 +70,7 @@ export default function Home() {
 
           <a
             href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
+            className={cx('card')}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -82,7 +84,7 @@ export default function Home() {
 
           <a
             href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
+            className={cx('card')}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -96,7 +98,7 @@ export default function Home() {
 
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
+            className={cx('card')}
             target="_blank"
             rel="noopener noreferrer"
           >

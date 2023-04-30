@@ -1,0 +1,13 @@
+@mixin color-mode($mode: light, $root: false) {
+  @if $root == true {
+    @media (prefers-color-scheme: $mode) {
+      :root {
+        @content;
+      }
+    }
+  } @else {
+    @media (prefers-color-scheme: $mode) {
+      @content;
+    }
+  }
+}

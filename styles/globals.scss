@@ -1,0 +1,72 @@
+@import 'shared';
+
+:root {
+  --#{$prefix}-max-width: #{$max-width};
+  --#{$prefix}-border-radius: #{$border-radius};
+  --#{$prefix}-font-mono: #{$font-family-mono};
+
+  --#{$prefix}-foreground: #{$foreground};
+  --#{$prefix}-foreground-rgb: #{to-rgb($foreground)};
+  --#{$prefix}-background-start: #{$background-start};
+  --#{$prefix}-background-start-rgb: #{to-rgb($background-start)};
+  --#{$prefix}-background-end: #{$background-end};
+  --#{$prefix}-background-end-rgb: #{to-rgb($background-end)};
+
+  --#{$prefix}-primary-glow: #{$primary-glow};
+  --#{$prefix}-secondary-glow: #{$secondary-glow};
+
+  --#{$prefix}-tile-start-rgb: #{to-rgb($tile-start)};
+  --#{$prefix}-tile-end-rgb: #{to-rgb($tile-end)};
+  --#{$prefix}-tile-border: #{$tile-border};
+
+  --#{$prefix}-callout-rgb: #{to-rgb($callout)};
+  --#{$prefix}-callout-border-rgb: #{to-rgb($callout-border)};
+  --#{$prefix}-card-rgb: #{to-rgb($card)};
+  --#{$prefix}-card-border-rgb: #{to-rgb($card-border)};
+}
+
+@include color-mode(dark, true) {
+  color-scheme: dark;
+
+  --#{$prefix}-foreground: #{$foreground-dark};
+  --#{$prefix}-foreground-rgb: #{to-rgb($foreground-dark)};
+  --#{$prefix}-background-start: #{$background-start-dark};
+  --#{$prefix}-background-start-rgb: #{to-rgb($background-start-dark)};
+  --#{$prefix}-background-end: #{$background-end-dark};
+  --#{$prefix}-background-end-rgb: #{to-rgb($background-end-dark)};
+
+  --#{$prefix}-primary-glow: #{$primary-glow-dark};
+  --#{$prefix}-secondary-glow: #{$secondary-glow-dark};
+
+  --#{$prefix}-tile-start-rgb: #{to-rgb($tile-start-dark)};
+  --#{$prefix}-tile-end-rgb: #{to-rgb($tile-end-dark)};
+  --#{$prefix}-tile-border: #{$tile-border-dark};
+
+  --#{$prefix}-callout-rgb: #{to-rgb($callout-dark)};
+  --#{$prefix}-callout-border-rgb: #{to-rgb($callout-border-dark)};
+  --#{$prefix}-card-rgb: #{to-rgb($card-dark)};
+  --#{$prefix}-card-border-rgb: #{to-rgb($card-border-dark)};
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--#{$prefix}-foreground);
+  background: linear-gradient(to bottom, transparent, var(--#{$prefix}-background-end))
+    var(--#{$prefix}-background-start);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

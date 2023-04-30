@@ -1,0 +1,32 @@
+@import 'common';
+
+$foreground: $black;
+$background-start: $gray-400;
+$background-end: $white;
+
+$primary-glow: conic-gradient(
+  from 180deg at 50% 50%,
+  rgba($blue-400, 0.2) 0deg,
+  rgba($blue-500, 0.2) 55deg,
+  rgba($blue-300, 0.2) 120deg,
+  rgba($blue-900, 0.2) 160deg,
+  transparent 360deg
+);
+$secondary-glow: radial-gradient(rgba($white, 1), rgba($white, 0));
+
+$tile-start: $gray-100;
+$tile-end: $gray-300;
+$tile-border: conic-gradient(
+  rgba($black, 0.5),
+  rgba($black, 0.25),
+  rgba($black, 0.19),
+  rgba($black, 0.13),
+  rgba($black, 0.06),
+  rgba($black, 0.06),
+  rgba($black, 0.5)
+);
+
+$callout: $gray-200;
+$callout-border: $gray-600;
+$card: $gray-500;
+$card-border: $gray-700;

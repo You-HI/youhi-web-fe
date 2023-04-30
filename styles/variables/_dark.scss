@@ -1,0 +1,30 @@
+@import 'common';
+
+$foreground-dark: $white;
+$background-start-dark: $black;
+$background-end-dark: $black;
+
+$primary-glow-dark: radial-gradient(rgba($blue-800, 0.4), rgba($blue-800, 0));
+$secondary-glow-dark: linear-gradient(
+  to bottom right,
+  rgba($blue-800, 0),
+  rgba($blue-800, 0),
+  rgba($blue-800, 0.3)
+);
+
+$tile-start-dark: $blue-600;
+$tile-end-dark: $blue-700;
+$tile-border-dark: conic-gradient(
+  rgba($white, 0.5),
+  rgba($white, 0.25),
+  rgba($white, 0.19),
+  rgba($white, 0.13),
+  rgba($white, 0.06),
+  rgba($white, 0.06),
+  rgba($white, 0.5)
+);
+
+$callout-dark: $black-900;
+$callout-border-dark: $gray-800;
+$card-dark: $gray-900;
+$card-border-dark: $gray-450;
