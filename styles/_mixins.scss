@@ -11,3 +11,30 @@
     }
   }
 }
+
+@mixin responsive($breakpoint: md) {
+  // breakpoint 참고: https://getbootstrap.com/docs/5.2/layout/breakpoints/
+  @if $breakpoint == md {
+    // Mobile
+    @media only screen and (max-width: 767.98px) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    // Tablet and Smaller Desktop
+    @media only screen and (min-width: 767.99px) and (max-width: 1199.97px) {
+      @content;
+    }
+  }
+  @if $breakpoint == xl {
+    // Desktop
+    @media only screen and (min-width: 1199.98px) and (max-width: 1399.98px) {
+      @content;
+    }
+  }
+  @if $breakpoint == xxl {
+    // Large Desktop
+    @media only screen and (min-width: 1399.99px) {
+      @content;
+    }
+  }
+}
