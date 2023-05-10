@@ -39,10 +39,5 @@
     "**/*.{ts,tsx}": [
       "lint"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
