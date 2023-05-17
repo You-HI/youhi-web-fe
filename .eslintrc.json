@@ -37,7 +37,8 @@
           "order": "asc"
         }
       }
-    ]
+    ], 
+    "semi": [2, "always"]
   },
   "settings": {
     "react": {
