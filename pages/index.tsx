@@ -5,6 +5,8 @@ import Image from 'next/image';
 
 import styles from '@/styles/Home.module.scss';
 
+import { environment } from 'src/constants/env';
+
 const cx = classNames.bind(styles);
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,8 +22,7 @@ export default function Home() {
       <main className={cx('main')}>
         <div className={cx('description')}>
           <p>
-            Get started by editing&nbsp;
-            <code className={cx('code')}>src/pages/index.tsx</code>
+            {environment}
           </p>
           <div>
             <a
