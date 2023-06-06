@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import Image from 'next/image';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 import styles from '@/styles/Home.module.scss';
 
@@ -11,6 +12,7 @@ const cx = classNames.bind(styles);
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
+  const { status, data } = useSession();
   return (
     <>
       <Head>
@@ -21,25 +23,29 @@ export default function Home() {
       </Head>
       <main className={cx('main')}>
         <div className={cx('description')}>
-          <p>
-            {environment}
-          </p>
+          <p>{environment}</p>
           <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={cx('vercelLogo')}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+            {status === 'authenticated' && data.user ? (
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                <img src={data.user.image as string} style={{ width: 50, height: 50 }} />
+                <div>{data.user.name}</div>
+                <button
+                  onClick={() => {
+                    signOut();
+                  }}
+                >
+                  logout
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={() => {
+                  signIn('google');
+                }}
+              >
+                login
+              </button>
+            )}
           </div>
         </div>
 
