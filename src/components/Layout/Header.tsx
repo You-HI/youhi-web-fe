@@ -1,6 +1,6 @@
 import { Layout, Menu } from 'antd';
 
-const Header = () => {
+export const Header = () => {
   return (
     <Layout.Header style={{ display: 'flex', alignItems: 'center' }}>
       <div style={{ color: 'white', marginRight: '32px' }}>로고</div>
@@ -19,5 +19,3 @@ const Header = () => {
     </Layout.Header>
   );
 };
-
-export default Header;

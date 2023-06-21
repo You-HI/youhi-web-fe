@@ -1,13 +1,13 @@
 import { Layout as AntDLayout } from 'antd';
 
-import Footer from './Footer';
-import Header from './Header';
+import { Footer } from './Footer';
+import { Header } from './Header';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <AntDLayout>
       <Header />
@@ -16,5 +16,3 @@ const Layout = ({ children }: LayoutProps) => {
     </AntDLayout>
   );
 };
-
-export default Layout;
