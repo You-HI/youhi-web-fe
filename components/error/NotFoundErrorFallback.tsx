@@ -1,5 +1,5 @@
 // TODO: 디자인 필요
-const NotFoundFallback = () => {
+export const NotFoundErrorFallback = () => {
   return (
     <div role="alert">
       <p>Something went wrong:</p>
@@ -7,5 +7,3 @@ const NotFoundFallback = () => {
     </div>
   );
 };
-
-export default NotFoundFallback;
