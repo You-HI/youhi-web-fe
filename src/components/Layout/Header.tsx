@@ -24,6 +24,7 @@ export const Header = () => {
       theme="dark"
       mode="horizontal"
       items={menuItems}
+      selectedKeys={[router.pathname]}
       onClick={e => {
         router.push(e.key);
       }}
