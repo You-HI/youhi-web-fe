@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:mock": "NEXT_PUBLIC_API_MOCKING=true next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -35,6 +36,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.0",
     "lint-staged": "13.2.2",
+    "msw": "^1.2.3",
     "prettier": "2.8.7",
     "sass": "^1.62.1",
     "typescript": "5.0.4"
@@ -43,5 +45,8 @@
     "**/*.{ts,tsx}": [
       "eslint"
     ]
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
