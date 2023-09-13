@@ -1,21 +1,33 @@
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, MenuProps } from 'antd';
+import { useRouter } from 'next/router';
+
+import { PATH } from 'src/constants/path';
+
+const menuItems: MenuProps['items'] = [{
+  label: 'Home',
+  key: PATH.home,
+}, {
+  label: 'Demo',
+  key: 'demo',
+  children: [{
+    label: 'Toast UI Editor',
+    key: PATH.editorDemo,
+  }]
+}];
 
 export const Header = () => {
-  return (
-    <Layout.Header style={{ display: 'flex', alignItems: 'center' }}>
-      <div style={{ color: 'white', marginRight: '32px' }}>로고</div>
-      <Menu
-        theme="dark"
-        mode="horizontal"
-        defaultSelectedKeys={['2']}
-        items={new Array(5).fill(null).map((_, index) => {
-          const key = index + 1;
-          return {
-            key,
-            label: `nav ${key}`,
-          };
-        })}
-      />
-    </Layout.Header>
-  );
+  const router = useRouter();
+  return <Layout.Header style={{ display: 'flex', alignItems: 'center' }}>
+    <div style={{ color: 'white', marginRight: '32px' }}>로고</div>
+    <Menu
+      style={{ flex: 1 }}
+      theme="dark"
+      mode="horizontal"
+      items={menuItems}
+      selectedKeys={[router.pathname]}
+      onClick={e => {
+        router.push(e.key);
+      }}
+    />
+  </Layout.Header>;
 };

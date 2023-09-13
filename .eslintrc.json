@@ -38,7 +38,8 @@
         }
       }
     ], 
-    "semi": [2, "always"]
+    "semi": [2, "always"],
+    "indent": ["error", 2]
   },
   "settings": {
     "react": {
