@@ -11,7 +11,13 @@ const menuItems: MenuProps['items'] = [{
   key: 'demo',
   children: [{
     label: 'Toast UI Editor',
-    key: PATH.editorDemo,
+    key: PATH.toastEditorDemo,
+  }, {
+    label: 'Tinymce',
+    key: PATH.tinymceDemo
+  }, {
+    label: 'Tiptap',
+    key: PATH.tiptapDemo
   }]
 }];
 

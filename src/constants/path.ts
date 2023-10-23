@@ -1,4 +1,6 @@
 export const PATH = {
   home: '/',
-  editorDemo: '/editor'
+  toastEditorDemo: '/demo/toasteditor',
+  tinymceDemo: '/demo/tinymce',
+  tiptapDemo: '/demo/tiptapeditor',
 };
