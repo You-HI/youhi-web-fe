@@ -20,7 +20,9 @@
       "@/styles/*": ["styles/*"],
       "@/apis/*": ["apis/*"],
       "@/components/*": ["src/components/*"],
-      "@/mocks/*": ["src/mocks/*"]
+      "@/mocks/*": ["src/mocks/*"],
+      "@/types/*": ["src/types/*"],
+      "@/stores/*": ["src/stores/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
