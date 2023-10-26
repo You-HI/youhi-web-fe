@@ -1,17 +1,20 @@
 import classNames from 'classnames/bind';
-import { Inter } from 'next/font/google';
+import { useAtomValue, useSetAtom } from 'jotai';
 import Head from 'next/head';
 import Image from 'next/image';
 
 import { Layout } from '@/components/Layout';
+import { testReadOnlyAtom, testReadWriteAtom } from '@/stores/globalStore';
 import styles from '@/styles/Home.module.scss';
 
 import { environment } from 'src/constants/env';
 
 const cx = classNames.bind(styles);
-const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
+  const test = useAtomValue(testReadOnlyAtom);
+  const setTest = useSetAtom(testReadWriteAtom);
+
   return (
     <>
       <Head>
@@ -23,6 +26,13 @@ export default function Home() {
       <Layout>
         <div className={cx('main')}>
           <p>{`Environment: ${environment}`}</p>
+          {/* TODO: 테스트 용도 */}
+          <div>
+            <button
+              style={{ marginTop: 20 }}
+              onClick={() => setTest(false)}
+            >{`useSetAtom 테스트: ${test}`}</button>
+          </div>
           <div className={cx('center')}>
             <Image
               className={cx('logo')}
@@ -41,12 +51,10 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h2 className={inter.className}>
+              <h2>
                 Docs <span>-&gt;</span>
               </h2>
-              <p className={inter.className}>
-                Find in-depth information about Next.js features and&nbsp;API.
-              </p>
+              <p>Find in-depth information about Next.js features and&nbsp;API.</p>
             </a>
 
             <a
@@ -55,12 +63,10 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h2 className={inter.className}>
+              <h2>
                 Learn <span>-&gt;</span>
               </h2>
-              <p className={inter.className}>
-                Learn about Next.js in an interactive course with&nbsp;quizzes!
-              </p>
+              <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
             </a>
 
             <a
@@ -69,12 +75,10 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h2 className={inter.className}>
+              <h2>
                 Templates <span>-&gt;</span>
               </h2>
-              <p className={inter.className}>
-                Discover and deploy boilerplate example Next.js&nbsp;projects.
-              </p>
+              <p>Discover and deploy boilerplate example Next.js&nbsp;projects.</p>
             </a>
 
             <a
@@ -83,12 +87,10 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h2 className={inter.className}>
+              <h2>
                 Deploy <span>-&gt;</span>
               </h2>
-              <p className={inter.className}>
-                Instantly deploy your Next.js site to a shareable URL with&nbsp;Vercel.
-              </p>
+              <p>Instantly deploy your Next.js site to a shareable URL with&nbsp;Vercel.</p>
             </a>
           </div>
         </div>
