@@ -1,10 +1,11 @@
-import { Editor } from '@tinymce/tinymce-react';
-import React, { useRef } from 'react';
+import { Editor as TinyMCEReact } from '@tinymce/tinymce-react';
+import React, {  useState } from 'react';
+import { Editor } from 'tinymce';
 
 import { Layout } from '@/components/Layout';
 
 const TinymceEditor = () => {
-  const editorRef = useRef<Editor>(null);
+  const [editor, setEditor] = useState<Editor>();
   const tinymcePlugins = ['link', 'lists', 'autoresize', 'image'];
   const tinymceToolbar =
     'blocks fontfamily |' +
@@ -14,8 +15,8 @@ const TinymceEditor = () => {
 
   return (
     <Layout>
-      <Editor
-        onInit={(_, editor) => (editorRef.current = editor)}
+      <TinyMCEReact
+        onInit={(_, editor) => (setEditor(editor))}
         init={{
           plugins: tinymcePlugins,
           toolbar: tinymceToolbar,
@@ -26,6 +27,7 @@ const TinymceEditor = () => {
           block_formats: '제목1=h2;제목2=h3;제목3=h4;본문=p;',
           image_caption: true,
         }}
+        onEditorChange={() => { console.log(editor?.getContent()); }}
       />
     </Layout>
   );
