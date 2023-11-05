@@ -22,7 +22,8 @@
       "@/components/*": ["src/components/*"],
       "@/mocks/*": ["src/mocks/*"],
       "@/types/*": ["src/types/*"],
-      "@/stores/*": ["src/stores/*"]
+      "@/stores/*": ["src/stores/*"],
+      "@/queries/*": ["src/queries/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
