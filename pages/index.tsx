@@ -15,6 +15,8 @@ export default function Home() {
   const test = useAtomValue(testReadOnlyAtom);
   const setTest = useSetAtom(testReadWriteAtom);
 
+  // const { data } = useGetUserQuery();
+
   return (
     <>
       <Head>
